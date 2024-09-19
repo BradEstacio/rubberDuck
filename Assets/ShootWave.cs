@@ -25,6 +25,11 @@ public class ShootWave : MonoBehaviour
 
         if(Physics.Raycast(shootWave, out waveHit, range, shootableMask))
         {
+            Debug.Log("Hit!");
+            if(waveHit.collider.tag == "Enemy"){
+                PlatformBug theEnemyHealth = waveHit.collider.GetComponent<PlatformBug>();
+                theEnemyHealth.addDamage(damage);
+            }
             // "Enemy" hit
             waveform.SetPosition(1, waveHit.point);
         }
@@ -43,32 +48,23 @@ public class ShootWave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if(Input.GetMouseButton(0))
-        // {
-        //     // (Rubber) Duck quack - need delay to compensate gap in auido wave
-        //     // Need to replace audio source with a proper rubber duck quack
-        //     myAudioSource.Play();
-        //     // Shoot audio waveform
-        //     Shoot();
-        // }
-        // else 
-        // {
-        //     StopShooting();
-        // }
+        shootableMask = LayerMask.GetMask("Shootable");
+        shootWave.origin = transform.position;
+        shootWave.direction = transform.forward;
+
+        if(Physics.Raycast(shootWave, out waveHit, range, shootableMask))
+        {
+            Debug.Log("Hit!");
+            if(waveHit.collider.tag == "Enemy"){
+                PlatformBug theEnemyHealth = waveHit.collider.GetComponent<PlatformBug>();
+                theEnemyHealth.addDamage(damage);
+            }
+            // "Enemy" hit
+            waveform.SetPosition(1, waveHit.point);
+        }
+        else
+        {
+            waveform.SetPosition(1, shootWave.origin + shootWave.direction * range);
+        }
     }
-
-    // void Shoot()
-    // {
-    //     QuackWaveform.SetActive(true);
-    // }
-
-    // void StopShooting()
-    // {
-    //     QuackWaveform.SetActive(false);
-    // }
-
-    // IEnumerator waiter()
-    // {
-    //     yield return new WaitForSeconds(1);
-    // }
 }
