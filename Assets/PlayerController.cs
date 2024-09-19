@@ -53,6 +53,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PickUp"))
+        {
+            Debug.Log("Key get!");
+            other.gameObject.SetActive(false);
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         grounded = true;
