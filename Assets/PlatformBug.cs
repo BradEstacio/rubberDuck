@@ -20,10 +20,12 @@ public class PlatformBug : MonoBehaviour
     {
         // Listen, the code is super broken right now so I have to do this.
         if((Time.time - lastCompletedCycleTime) >= interval){
+            Debug.Log("Bug State");
             bug.gameObject.SetActive(true);
             platform.gameObject.SetActive(false);
         }
         if((Time.time - lastCompletedCycleTime) >= interval * 2){
+            Debug.Log("Platform State");
             bug.gameObject.SetActive(false);
             platform.gameObject.SetActive(true);
             lastCompletedCycleTime = Time.time;

@@ -219,6 +219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7736807385202118293}
+  - component: {fileID: 989885908761578264}
   m_Layer: 0
   m_Name: PlatformBug
   m_TagString: Untagged
@@ -243,3 +244,20 @@ Transform:
   - {fileID: 1116532261747670963}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &989885908761578264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4718197609970188075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dcdadfe830069b45a255c5d2ca9bccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bug: {fileID: 0}
+  platform: {fileID: 0}
+  enemyHealth: 1
+  interval: 3
+  lastCompletedCycleTime: 0
