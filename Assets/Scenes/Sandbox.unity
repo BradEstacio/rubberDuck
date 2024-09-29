@@ -841,6 +841,10 @@ PrefabInstance:
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2879337406819153898, guid: 4f245b07694efa147bba1480326035ce, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4862485166971448632, guid: 4f245b07694efa147bba1480326035ce, type: 3}
       propertyPath: m_Name
       value: Player
