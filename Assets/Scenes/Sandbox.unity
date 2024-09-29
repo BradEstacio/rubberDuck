@@ -571,6 +571,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 12
+  facingRight: 0
+  timeBetweenShots: 1
   projectilePrefab: {fileID: 5069504487394908784, guid: 2c2369379babf9f46bb6f8c6372a698e, type: 3}
   shootPoint: {fileID: 2116290597}
   shootSound: {fileID: 8300000, guid: a7166f229b191dc43a13d8417af9e154, type: 3}
@@ -785,13 +787,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 669881338104399453, guid: 4f245b07694efa147bba1480326035ce, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1416837498386360266, guid: 4f245b07694efa147bba1480326035ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1416837498386360266, guid: 4f245b07694efa147bba1480326035ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044995339730137586, guid: 4f245b07694efa147bba1480326035ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.41
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2044995339730137586, guid: 4f245b07694efa147bba1480326035ce, type: 3}
       propertyPath: m_LocalPosition.y
