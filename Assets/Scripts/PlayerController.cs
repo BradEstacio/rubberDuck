@@ -2,20 +2,31 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Player movement
     public float moveSpeed = 20f;
     public float jumpForce = 5f;
+    private Rigidbody rb;
+    private bool isGrounded;
+    public bool facingRight;
+
+    // Player shooting
+    public float timeBetweenShots = 1f;
+    float nextShot;
     public GameObject projectilePrefab;
     public Transform shootPoint;
     public AudioClip shootSound;
     private AudioSource audioSource;
 
-    private Rigidbody rb;
-    private bool isGrounded;
+    void Awake()
+    {
+        nextShot = 1f;
+    }
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
+        facingRight = true;
     }
 
     void Update()
@@ -27,14 +38,20 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
 
-        // Shooting Logic
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+
+        if(Input.GetMouseButton(0) && (nextShot < Time.time))
         {
-            Shoot(Vector3.right); // Shoot right
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            Shoot(Vector3.left); // Shoot left
+            nextShot = Time.time + timeBetweenShots;
+            
+            // Shooting Logic
+            if (facingRight)
+            {
+                Shoot(Vector3.right); // Shoot right
+            }
+            else if (!facingRight)
+            {
+                Shoot(Vector3.left); // Shoot left
+            }
         }
     }
 
@@ -43,6 +60,17 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         Vector3 movement = new Vector3(moveHorizontal * moveSpeed, rb.velocity.y, 0);
         rb.velocity = movement;
+
+        if((moveHorizontal > 0) && !facingRight)
+        {
+            Debug.Log("Facing right.");
+            Flip();
+        }
+        else if((moveHorizontal < 0) && facingRight)
+        {
+            Debug.Log("Facing left.");
+            Flip();
+        }
     }
 
     private void Jump()
@@ -71,19 +99,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void Flip()
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
+        facingRight = !facingRight;
+
+        Vector3 theScale = transform.localScale;
+
+        theScale.z *= -1;
+        transform.localScale = theScale;
     }
 
-    private void OnCollisionExit(Collision collision)
+    public float GetFacing()
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if(facingRight)
         {
-            isGrounded = false;
+            return 1f;
+        }
+        else
+        {
+            return -1f;
         }
     }
 }
