@@ -108,16 +108,4 @@ public class PlayerController : MonoBehaviour
         theScale.z *= -1;
         transform.localScale = theScale;
     }
-
-    public float GetFacing()
-    {
-        if(facingRight)
-        {
-            return 1f;
-        }
-        else
-        {
-            return -1f;
-        }
-    }
 }
