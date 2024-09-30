@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 7736807385202118293}
   - component: {fileID: 5949564556778290427}
   m_Layer: 0
-  m_Name: PlatformBug
+  m_Name: PlatformMoth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

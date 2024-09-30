@@ -497,7 +497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4718197609970188075, guid: 2f7f076f03e59f84dac8a3d68c800d9e, type: 3}
       propertyPath: m_Name
-      value: PlatformBug
+      value: PlatformMoth
       objectReference: {fileID: 0}
     - target: {fileID: 4718197609970188075, guid: 2f7f076f03e59f84dac8a3d68c800d9e, type: 3}
       propertyPath: m_Layer
