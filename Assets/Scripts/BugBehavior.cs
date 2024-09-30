@@ -23,6 +23,7 @@ public class BugBehavior : MonoBehaviour
 
     public IEnumerator TransformTimer(float timer)
     {
+        // Probably can be condense all bug types into same script, but seperating the "Quacked" behaviors into different scripts feels cleaner overall
         bug.gameObject.SetActive(false);
         quacked.gameObject.SetActive(true);
         yield return new WaitForSeconds(timer);
