@@ -44,6 +44,9 @@ public class Bullet : MonoBehaviour
                 case "Ant":
                     theBug.QuackState(collision.gameObject.tag, 3f);
                     break;
+                case "Moth":
+                    theBug.QuackState(collision.gameObject.tag, 5f);
+                    break;
             }
         }
     }

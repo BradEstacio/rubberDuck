@@ -15,18 +15,6 @@ public class BugBehavior : MonoBehaviour
         lastCompletedCycleTime = Time.time;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     // Bug is temporarily transformed into an object that can be used by the player
     public void QuackState(string bugName, float interval)
     {
