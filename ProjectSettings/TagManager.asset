@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Ant
+  - Moth
   layers:
   - Default
   - TransparentFX

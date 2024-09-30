@@ -1,4 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -52,6 +55,12 @@ public class PlayerController : MonoBehaviour
             {
                 Shoot(Vector3.left); // Shoot left
             }
+        }
+
+        // Temporary level reset functionality
+        if(Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene("Sandbox");
         }
     }
 
@@ -107,17 +116,5 @@ public class PlayerController : MonoBehaviour
 
         theScale.z *= -1;
         transform.localScale = theScale;
-    }
-
-    public float GetFacing()
-    {
-        if(facingRight)
-        {
-            return 1f;
-        }
-        else
-        {
-            return -1f;
-        }
     }
 }

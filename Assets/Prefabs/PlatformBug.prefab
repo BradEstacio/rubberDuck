@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2490585338064544749}
   - component: {fileID: 4379071611030437995}
   m_Layer: 0
-  m_Name: PlatformQuack
+  m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -219,6 +219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7736807385202118293}
+  - component: {fileID: 5949564556778290427}
   m_Layer: 0
   m_Name: PlatformBug
   m_TagString: Untagged
@@ -243,3 +244,18 @@ Transform:
   - {fileID: 1116532261747670963}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5949564556778290427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4718197609970188075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47ce4b1320ed9534f89e5fb020bbc9eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bug: {fileID: 4666490947343416350}
+  quacked: {fileID: 3801155012734686791}
+  lastCompletedCycleTime: 0
