@@ -29,9 +29,10 @@ public class Bullet : MonoBehaviour
         // Check if projectile collided with a game object named "Enemy"
         if(collision.gameObject.name == "Enemy")
         {
-            BugBehavior bug = gameObject.GetComponent<BugBehavior>();
+            BugBehavior theBug = collision.gameObject.transform.parent.gameObject.GetComponent<BugBehavior>();
 
             Debug.Log("Enemy hit!");
+            Debug.Log(collision.gameObject.transform.parent.gameObject);
             Debug.Log(collision.gameObject.tag);
 
             // Bullet is destroyed upon collision with an enemy
@@ -41,7 +42,7 @@ public class Bullet : MonoBehaviour
             switch(collision.gameObject.tag)
             {
                 case "Ant":
-                    bug.QuackState(collision.gameObject.tag, 3f);
+                    theBug.QuackState(collision.gameObject.tag, 3f);
                     break;
             }
         }

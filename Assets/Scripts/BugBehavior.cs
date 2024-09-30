@@ -24,21 +24,21 @@ public class BugBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // Bug is temporarily transformed into an object that can be used by the player
     public void QuackState(string bugName, float interval)
     {
-        if((Time.time - lastCompletedCycleTime) >= interval)
-        {
-            Debug.Log("Transform to Quacked State...");
-            bug.gameObject.SetActive(false);
-            quacked.gameObject.SetActive(true);
-        }
-        Debug.Log("Reverting to Bug State...");
-        quacked.gameObject.SetActive(false);
+        StartCoroutine(TransformTimer(interval));
+    }
+
+    public IEnumerator TransformTimer(float timer)
+    {
+        bug.gameObject.SetActive(false);
+        quacked.gameObject.SetActive(true);
+        yield return new WaitForSeconds(timer);
         bug.gameObject.SetActive(true);
-        lastCompletedCycleTime = Time.time;
+        quacked.gameObject.SetActive(false);
     }
 }
