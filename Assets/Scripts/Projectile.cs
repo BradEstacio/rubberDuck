@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        // Destroy the bullet after 'lifespan' seconds
+        // Destroy the bullet after 'lifespan' seconds - if it has not collided with an enemy
         Destroy(gameObject, lifespan);
     }
 
@@ -29,11 +29,21 @@ public class Bullet : MonoBehaviour
         // Check if projectile collided with a game object named "Enemy"
         if(collision.gameObject.name == "Enemy")
         {
+            BugBehavior bug = gameObject.GetComponent<BugBehavior>();
+
             Debug.Log("Enemy hit!");
             Debug.Log(collision.gameObject.tag);
 
             // Bullet is destroyed upon collision with an enemy
             Destroy(gameObject);
+
+            // Switch statement to call upon a timer function depending on the bug
+            switch(collision.gameObject.tag)
+            {
+                case "Ant":
+                    bug.QuackState(collision.gameObject.tag, 3f);
+                    break;
+            }
         }
     }
 }
