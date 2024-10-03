@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 3709685809449394072}
   - component: {fileID: 7690874329345508756}
   m_Layer: 6
-  m_Name: Bug
+  m_Name: Enemy
   m_TagString: Moth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

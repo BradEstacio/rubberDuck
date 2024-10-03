@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         // Temporary level reset functionality
         if(Input.GetKeyDown("r"))
         {
-            SceneManager.LoadScene("Sandbox");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
