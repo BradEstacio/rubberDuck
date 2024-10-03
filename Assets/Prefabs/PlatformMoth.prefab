@@ -12,13 +12,13 @@ GameObject:
   - component: {fileID: 2206344312266240716}
   - component: {fileID: 2490585338064544749}
   - component: {fileID: 4379071611030437995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1116532261747670963
 Transform:
   m_ObjectHideFlags: 0
@@ -117,9 +117,9 @@ GameObject:
   - component: {fileID: 8992099521783153492}
   - component: {fileID: 3709685809449394072}
   - component: {fileID: 7690874329345508756}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bug
-  m_TagString: Untagged
+  m_TagString: Moth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,7 +202,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -220,7 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7736807385202118293}
   - component: {fileID: 5949564556778290427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlatformMoth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
