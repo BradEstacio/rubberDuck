@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9c7eda92461ad46ba8992740e1dfd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceSpeed: 12.5
+  bounceSpeed: 22.5
 --- !u!54 &499620196323393740
 Rigidbody:
   m_ObjectHideFlags: 0
