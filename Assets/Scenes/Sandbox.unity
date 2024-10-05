@@ -588,6 +588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentDoor: {fileID: 450940736}
+  associatedSpider: {fileID: 1364853639}
 --- !u!65 &458976550
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -598,10 +599,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 65
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -742,6 +743,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PushBlockSpider
       objectReference: {fileID: 0}
+    - target: {fileID: 5441043813691082298, guid: 19aebadd7fdae3a4380f8ed9c89facc2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -869,6 +874,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4095929366104386277, guid: 4f245b07694efa147bba1480326035ce, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a7166f229b191dc43a13d8417af9e154, type: 3}
+    - target: {fileID: 4095929366104386277, guid: 4f245b07694efa147bba1480326035ce, type: 3}
       propertyPath: facingRight
       value: 1
       objectReference: {fileID: 0}
@@ -881,6 +890,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f245b07694efa147bba1480326035ce, type: 3}
+--- !u!1 &1364853639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5524932400408743663, guid: 19aebadd7fdae3a4380f8ed9c89facc2, type: 3}
+  m_PrefabInstance: {fileID: 897388600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1626762869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2044995339730137586, guid: 4f245b07694efa147bba1480326035ce, type: 3}
