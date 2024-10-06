@@ -20,8 +20,9 @@ public class PlayerController : MonoBehaviour
     public AudioClip shootSound;
     private AudioSource audioSource;
 
-    // Collectibles
+    // For collectibles
     private int keyCount;
+    [SerializeField] private string levelName;
 
     void Awake()
     {
@@ -80,7 +81,7 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("Key Count: " + keyCount);
                     break;
                 case "Finish":
-                    SceneManager.LoadScene("LevelDemo");
+                    SceneManager.LoadScene(levelName);
                     break;
             }
         }
