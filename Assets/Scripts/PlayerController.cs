@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private AudioSource audioSource;
 
     // For collectibles
-    private int keyCount;
+    public int keyCount;
     [SerializeField] private string levelName;
 
     void Awake()
