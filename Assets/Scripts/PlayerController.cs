@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
     public AudioClip shootSound;
     private AudioSource audioSource;
 
+    // For collectibles
+    public int keyCount;
+    [SerializeField] private string levelName;
+
     void Awake()
     {
         nextShot = 1f;
@@ -30,6 +34,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
         facingRight = true;
+        keyCount = 0;
     }
 
     void Update()
@@ -61,6 +66,24 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown("r"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("PickUp"))
+        {
+            switch(other.gameObject.name)
+            {
+                case "Key":
+                    other.gameObject.SetActive(false);
+                    keyCount += 1;
+                    Debug.Log("Key Count: " + keyCount);
+                    break;
+                case "Finish":
+                    SceneManager.LoadScene(levelName);
+                    break;
+            }
         }
     }
 
