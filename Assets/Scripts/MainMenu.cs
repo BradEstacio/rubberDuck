@@ -8,14 +8,22 @@ public class MainMenu : MonoBehaviour
     public GameObject StartMenuUI;
     public GameObject DroppedObject;
 
+    public float timeBetweenDrops = 1f;
+    float nextDrop;
+
+    void Awake()
+    {
+        nextDrop = 1f;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(0) && (nextDrop < Time.time))
         {
+            nextDrop = Time.time + timeBetweenDrops;
             Debug.Log("Duck dropped.");
             Instantiate(DroppedObject, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 90, 0)));
-            //Instantiate(prefab, new Vector3(i * 2.0f, 0, 0), Quaternion.identity);
         }
     }
 
