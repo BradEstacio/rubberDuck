@@ -8,6 +8,7 @@ TagManager:
   - Ant
   - Moth
   - Spider
+  - PickUp
   layers:
   - Default
   - TransparentFX
