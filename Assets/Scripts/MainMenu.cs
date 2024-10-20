@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject StartMenuUI;
     public GameObject DroppedObject;
+    public Material mat;
 
     public float timeBetweenDrops = .5f;
     float nextDrop;
@@ -15,19 +16,30 @@ public class MainMenu : MonoBehaviour
     {
         nextDrop = 1f;
     }
+
+    void Start()
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            float randX = Random.Range(-10f, 10f);
+            float randY = Random.Range(-4f, 8f);
+            GameObject cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+            cylinder.transform.position = new Vector3(randX, randY, 0);
+            cylinder.transform.rotation = Quaternion.Euler(new Vector3(90, 0, 0));
+            cylinder.GetComponent<Renderer>().material = mat;
+        }
+    }
     
     // Update is called once per frame
     void Update()
     {
         if(Input.GetMouseButton(0) && (nextDrop < Time.time))
         {
-            Debug.Log("Duck dropped.");
             nextDrop = Time.time + timeBetweenDrops;
             float randX = Random.Range(-10f, 10f);
             float randY = Random.Range(-4f, 8f);
-            Instantiate(DroppedObject, new Vector3(randX, randY, 0), Quaternion.Euler(new Vector3(0, 90, 0)));
-            //GameObject Duck = Instantiate(DroppedObject, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 90, 0)));
-            //DuckPachinko DuckGame = Duck.GetComponent<DuckPachinko>();
+            GameObject Duck = Instantiate(DroppedObject, new Vector3(randX, randY, 0), Quaternion.Euler(new Vector3(0, 90, 0)));
+            Destroy(Duck, 10f);
         }
     }
 

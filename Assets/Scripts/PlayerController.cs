@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    // Player + Duck animation
+    public Animator thorAnim;
+    public Animator duckAnim;
+
     // Player movement
     public float moveSpeed = 20f;
     public float jumpForce = 5f;
