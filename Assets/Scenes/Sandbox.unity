@@ -1060,7 +1060,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1214,6 +1214,14 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4095929366104386277, guid: 4f245b07694efa147bba1480326035ce, type: 3}
+      propertyPath: duckAnim
+      value: 
+      objectReference: {fileID: 774555683}
+    - target: {fileID: 4095929366104386277, guid: 4f245b07694efa147bba1480326035ce, type: 3}
+      propertyPath: thorAnim
+      value: 
+      objectReference: {fileID: 1459408706}
     - target: {fileID: 4095929366104386277, guid: 4f245b07694efa147bba1480326035ce, type: 3}
       propertyPath: jumpForce
       value: 12
@@ -1607,7 +1615,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659456031}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2080,7 +2088,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145752691}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

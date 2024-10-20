@@ -124,6 +124,8 @@ public class PlayerController : MonoBehaviour
         GameObject bullet = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         bulletScript.SetDirection(direction); // Set direction for the bullet
+        thorAnim.SetTrigger("Attack");
+        duckAnim.SetTrigger("Attack");
         PlayShootSound();
     }
 
