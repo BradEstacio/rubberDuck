@@ -121,12 +121,9 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot(Vector3 direction)
     {
-        GameObject bullet = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
-        Bullet bulletScript = bullet.GetComponent<Bullet>();
-        bulletScript.SetDirection(direction); // Set direction for the bullet
         thorAnim.SetTrigger("Attack");
         duckAnim.SetTrigger("Attack");
-        PlayShootSound();
+        StartCoroutine(ShootDelay(direction, 0.5f)); // Code that delayed bullet shooting out when attack animation was slower
     }
 
     private void PlayShootSound()
@@ -145,5 +142,14 @@ public class PlayerController : MonoBehaviour
 
         theScale.z *= -1;
         transform.localScale = theScale;
+    }
+
+    public IEnumerator ShootDelay(Vector3 direction, float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        GameObject bullet = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+        bulletScript.SetDirection(direction); // Set direction for the bullet
+        PlayShootSound();
     }
 }
