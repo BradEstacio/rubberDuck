@@ -1323,7 +1323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4095929366104386277, guid: 4f245b07694efa147bba1480326035ce, type: 3}
       propertyPath: moveSpeed
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4095929366104386277, guid: 4f245b07694efa147bba1480326035ce, type: 3}
       propertyPath: shootSound

@@ -73,6 +73,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // void FixedUpdate()
+    // {
+    //     Move();
+    // }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("PickUp"))
@@ -96,6 +101,8 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         Vector3 movement = new Vector3(moveHorizontal * moveSpeed, rb.velocity.y, 0);
         rb.velocity = movement;
+
+        thorAnim.SetFloat("Speed", Mathf.Abs(moveHorizontal * moveSpeed));
 
         if((moveHorizontal > 0) && !facingRight)
         {
