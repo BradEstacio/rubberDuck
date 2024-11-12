@@ -45,10 +45,10 @@ public class Bullet : MonoBehaviour
                     theBug.QuackState(collision.gameObject.tag, 3f);
                     break;
                 case "Moth":
-                    theBug.QuackState(collision.gameObject.tag, 5f);
+                    theBug.QuackState(collision.gameObject.tag, 7f);
                     break;
                 case "Spider":
-                    theBug.QuackState(collision.gameObject.tag, 5f);
+                    theBug.QuackState(collision.gameObject.tag, 7.5f);
                     break;
             }
         }

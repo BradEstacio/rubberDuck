@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f6b0be24a9f4b0148b80436dd054cfdf
+guid: 2e054b07125066f4d805b3554265a723
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Run
-      takeName: Run
-      internalID: 5522812681064789136
+      name: thorRun
+      takeName: thorRun
+      internalID: 1188752457194191611
       firstFrame: 1
-      lastFrame: 20
+      lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

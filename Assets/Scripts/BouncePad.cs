@@ -6,12 +6,12 @@ public class BouncePad : MonoBehaviour
 {
     public float bounceSpeed;
 
-    void OnCollisionEnter(Collision other)
+    void OnCollisionStay(Collision other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
             Debug.Log("On bouncepad");
-            other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * bounceSpeed, ForceMode.Impulse);
+            other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * bounceSpeed, ForceMode.VelocityChange);
         }    
     }
 }

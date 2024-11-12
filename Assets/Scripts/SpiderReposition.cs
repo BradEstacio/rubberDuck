@@ -10,6 +10,6 @@ public class SpiderReposition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spider.transform.position = block.transform.position;
+        spider.transform.position = new Vector3(block.transform.position.x, block.transform.position.y - 0.6f, block.transform.position.z);
     }
 }
