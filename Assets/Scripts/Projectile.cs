@@ -34,6 +34,7 @@ public class Bullet : MonoBehaviour
         // You can customize this check as per your game logic
         if (collision.gameObject.name == "Enemy")
         {
+            BugBehavior theBug = collision.gameObject.transform.parent.gameObject.GetComponent<BugBehavior>();
             // If the bullet hits an enemy, destroy it and trigger explosion
             Destroy(gameObject);
 
