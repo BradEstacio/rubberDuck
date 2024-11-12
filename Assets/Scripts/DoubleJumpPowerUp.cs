@@ -8,10 +8,10 @@ public class DoubleJumpPowerUp : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Activate the double jump ability in the player
-            DoubleJump DoubleJump = other.GetComponent<DoubleJump>();
-            if (DoubleJump != null)
+            PlayerController Player = other.GetComponent<PlayerController>();
+            if (Player != null)
             {
-                DoubleJump.ActivateDoubleJump();
+                Player.ActivateDoubleJump();
             }
 
             // Destroy the power-up object after it is collected

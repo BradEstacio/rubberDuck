@@ -34,9 +34,25 @@ public class Bullet : MonoBehaviour
         // You can customize this check as per your game logic
         if (collision.gameObject.name == "Enemy")
         {
+            BugBehavior theBug = collision.gameObject.transform.parent.gameObject.GetComponent<BugBehavior>();
             // If the bullet hits an enemy, destroy it and trigger explosion
             Destroy(gameObject);
+
             TriggerDuckExplosion(collision.transform.position);
+
+            // Switch statement to call upon a timer function depending on the bug
+            switch(collision.gameObject.tag)
+            {
+                case "Ant":
+                    theBug.QuackState(collision.gameObject.tag, 3f);
+                    break;
+                case "Moth":
+                    theBug.QuackState(collision.gameObject.tag, 5f);
+                    break;
+                case "Spider":
+                    theBug.QuackState(collision.gameObject.tag, 5f);
+                    break;
+            }
         }
     }
 

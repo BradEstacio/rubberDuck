@@ -7,8 +7,9 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject StartMenuUI;
     public GameObject DroppedObject;
+    public Material mat;
 
-    public float timeBetweenDrops = 1f;
+    public float timeBetweenDrops = .5f;
     float nextDrop;
 
     void Awake()
@@ -16,20 +17,27 @@ public class MainMenu : MonoBehaviour
         nextDrop = 1f;
     }
 
+    void Start()
+    {
+
+    }
+    
     // Update is called once per frame
     void Update()
     {
         if(Input.GetMouseButton(0) && (nextDrop < Time.time))
         {
             nextDrop = Time.time + timeBetweenDrops;
-            Debug.Log("Duck dropped.");
-            Instantiate(DroppedObject, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 90, 0)));
+            float randX = Random.Range(-10.5f, 10.5f);
+            float randY = Random.Range(-4f, 10.5f);
+            GameObject Duck = Instantiate(DroppedObject, new Vector3(randX, randY, 0), Quaternion.Euler(new Vector3(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f))));
+            Destroy(Duck, 10f);
         }
     }
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Sandbox");
+        SceneManager.LoadScene("LevelS");
     }
 
     public void QuitGame()

@@ -15,7 +15,7 @@ public class DoubleJump : MonoBehaviour
     // Double jump
     public int maxJumps = 1;        // Start with 1 jump (no double jump)
     private int jumpCount = 0;      // Tracks how many jumps the player has done
-    private bool canDoubleJump = false; // Tracks if double jump is currently enabled
+    //private bool canDoubleJump = false; // Tracks if double jump is currently enabled
 
     // Player shooting
     public float timeBetweenShots = 1f;
@@ -140,6 +140,7 @@ public class DoubleJump : MonoBehaviour
     // Method to activate the double jump ability
     public void ActivateDoubleJump()
     {
+        Debug.Log("Double jump activated.");
         maxJumps = 2;  // Allow double jump
         StartCoroutine(DoubleJumpTimer());
     }
