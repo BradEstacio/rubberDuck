@@ -52,9 +52,4 @@ public class SwitchDoor : MonoBehaviour
         doorOpen = false;
         door.gameObject.SetActive(true);
     }
-
-    private void OnDisable()
-    {
-        Debug.Log("Door disabled");
-    }
 }
