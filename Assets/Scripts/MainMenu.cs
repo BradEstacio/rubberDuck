@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public GameObject StartMenuUI;
+    public GameObject LevelSelectUI;
     public GameObject DroppedObject;
     public Material mat;
 
@@ -17,12 +18,6 @@ public class MainMenu : MonoBehaviour
         nextDrop = 1f;
     }
 
-    void Start()
-    {
-
-    }
-    
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetMouseButton(0) && (nextDrop < Time.time))
@@ -37,7 +32,9 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("LevelS");
+        // SceneManager.LoadScene("LevelS");
+        StartMenuUI.SetActive(false);
+        LevelSelectUI.SetActive(true);
     }
 
     public void QuitGame()
