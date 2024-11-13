@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   lifespan: 1
+  duckExplosionPrefab: {fileID: 136300, guid: 47eccfdaaa8490246bb90d54bab6ccbd, type: 3}
