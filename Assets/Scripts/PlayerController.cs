@@ -18,16 +18,18 @@ public class PlayerController : MonoBehaviour
 
     // Player shooting
     public float timeBetweenShots = 0.5f;
-    float nextShot;
+    private float nextShot;
     public GameObject projectilePrefab;
     public Transform shootPoint;
     public AudioClip shootSound;
     private AudioSource audioSource;
 
+    // Shooting VFX
+    public GameObject shootVFXPrefab; // Drag your VFX prefab here
+
     // Double jump
     public int maxJumps = 1;        // Start with 1 jump (no double jump)
     private int jumpCount = 0;      // Tracks how many jumps the player has done
-    //private bool canDoubleJump = false; // Tracks if double jump is currently enabled
 
     // For collectibles
     public int keyCount;
@@ -50,23 +52,21 @@ public class PlayerController : MonoBehaviour
     {
         Move();
 
-        //isGrounded = IsGrounded();
-
         // Allow jumping if the player is grounded or has available jumps (double jump when enabled)
-        if(IsGrounded() || jumpCount < maxJumps)
+        if (IsGrounded() || jumpCount < maxJumps)
         {
-            if(Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump"))
             {
-                    Jump();
+                Jump();
             }
         }
 
-
-        if(Input.GetMouseButton(0) && (nextShot < Time.time))
+        // Shooting input
+        if (Input.GetMouseButton(0) && (nextShot < Time.time))
         {
             nextShot = Time.time + timeBetweenShots;
-            
-            // Shooting Logic
+
+            // Shooting logic
             if (facingRight)
             {
                 Shoot(Vector3.right); // Shoot right
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Temporary level reset functionality
-        if(Input.GetKeyDown("r"))
+        if (Input.GetKeyDown("r"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -86,9 +86,9 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("PickUp"))
+        if (other.gameObject.CompareTag("PickUp"))
         {
-            switch(other.gameObject.name)
+            switch (other.gameObject.name)
             {
                 case "Key":
                     other.gameObject.SetActive(false);
@@ -112,14 +112,12 @@ public class PlayerController : MonoBehaviour
         thorAnim.SetFloat("Speed", Mathf.Abs(moveHorizontal * moveSpeed));
         duckAnim.SetFloat("Speed", Mathf.Abs(moveHorizontal * moveSpeed));
 
-        if((moveHorizontal > 0) && !facingRight)
+        if ((moveHorizontal > 0) && !facingRight)
         {
-            Debug.Log("Facing right.");
             Flip();
         }
-        else if((moveHorizontal < 0) && facingRight)
+        else if ((moveHorizontal < 0) && facingRight)
         {
-            Debug.Log("Facing left.");
             Flip();
         }
     }
@@ -151,7 +149,7 @@ public class PlayerController : MonoBehaviour
     {
         thorAnim.SetTrigger("Attack");
         duckAnim.SetTrigger("Attack");
-        StartCoroutine(ShootDelay(direction, 0.37f)); // Code that delayed bullet shooting out when attack animation was slower
+        StartCoroutine(ShootDelay(direction, 0.37f)); // Delay for bullet firing to match animation timing
     }
 
     private void PlayShootSound()
@@ -165,9 +163,7 @@ public class PlayerController : MonoBehaviour
     void Flip()
     {
         facingRight = !facingRight;
-
         Vector3 theScale = transform.localScale;
-
         theScale.z *= -1;
         transform.localScale = theScale;
     }
@@ -175,10 +171,18 @@ public class PlayerController : MonoBehaviour
     public IEnumerator ShootDelay(Vector3 direction, float timer)
     {
         yield return new WaitForSeconds(timer);
+
+        // Instantiate the bullet
         GameObject bullet = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         bulletScript.SetDirection(direction); // Set direction for the bullet
         PlayShootSound();
+
+        // Instantiate the VFX at the shoot point
+        if (shootVFXPrefab != null)
+        {
+            Instantiate(shootVFXPrefab, shootPoint.position, Quaternion.identity);
+        }
     }
 
     // Method to activate the double jump ability
@@ -199,21 +203,16 @@ public class PlayerController : MonoBehaviour
     // Play jump animations when colliding with a BouncePad
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "BouncePad")
+        if (collision.gameObject.name == "BouncePad")
         {
             thorAnim.SetTrigger("Jump");
             duckAnim.SetTrigger("Jump");
         }
-        // else if(collision.gameObject.name == "PushBlock")
-        // {
-        //     thorAnim.SetTrigger("Push");
-        //     duckAnim.SetTrigger("Push");
-        // }
     }
 
     void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.name == "PushBlock")
+        if (collision.gameObject.name == "PushBlock")
         {
             thorAnim.SetBool("PushingBlock", true);
             duckAnim.SetBool("PushingBlock", true);
