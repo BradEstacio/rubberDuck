@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thorAnim: {fileID: 6975354930570858780}
   duckAnim: {fileID: 4568757058050780733}
-  moveSpeed: 9
+  moveSpeed: 10
   jumpForce: 12
   facingRight: 1
   timeBetweenShots: 0.75
