@@ -362,6 +362,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2558148201555402508, guid: 2f7f076f03e59f84dac8a3d68c800d9e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 87ff4ce230081ce4d9d99ef39aee62b5, type: 2}
     - target: {fileID: 4718197609970188075, guid: 2f7f076f03e59f84dac8a3d68c800d9e, type: 3}
       propertyPath: m_Name
       value: PlatformMoth
@@ -601,6 +605,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1882418576}
     m_Modifications:
+    - target: {fileID: 2558148201555402508, guid: 2f7f076f03e59f84dac8a3d68c800d9e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 87ff4ce230081ce4d9d99ef39aee62b5, type: 2}
     - target: {fileID: 4718197609970188075, guid: 2f7f076f03e59f84dac8a3d68c800d9e, type: 3}
       propertyPath: m_Name
       value: PlatformMoth

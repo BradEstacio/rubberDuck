@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thorAnim: {fileID: 6975354930570858780}
   duckAnim: {fileID: 4568757058050780733}
-  moveSpeed: 9
+  moveSpeed: 10
   jumpForce: 12
   facingRight: 1
   timeBetweenShots: 0.75
@@ -434,10 +434,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7993350423121640896, guid: 78a824f0c0c345743899c0f930d2e4f3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c8c34f3553fbf44b9498742406c13da, type: 2}
+    - target: {fileID: -7870069872471394821, guid: 78a824f0c0c345743899c0f930d2e4f3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c8c34f3553fbf44b9498742406c13da, type: 2}
+    - target: {fileID: -5959780590786708375, guid: 78a824f0c0c345743899c0f930d2e4f3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c8c34f3553fbf44b9498742406c13da, type: 2}
+    - target: {fileID: -5768928573953852698, guid: 78a824f0c0c345743899c0f930d2e4f3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c8c34f3553fbf44b9498742406c13da, type: 2}
+    - target: {fileID: -2587367432424959597, guid: 78a824f0c0c345743899c0f930d2e4f3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c8c34f3553fbf44b9498742406c13da, type: 2}
+    - target: {fileID: -1786170018558735396, guid: 78a824f0c0c345743899c0f930d2e4f3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c8c34f3553fbf44b9498742406c13da, type: 2}
+    - target: {fileID: 918064826277154069, guid: 78a824f0c0c345743899c0f930d2e4f3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c8c34f3553fbf44b9498742406c13da, type: 2}
     - target: {fileID: 919132149155446097, guid: 78a824f0c0c345743899c0f930d2e4f3, type: 3}
       propertyPath: m_Name
       value: Thor
       objectReference: {fileID: 0}
+    - target: {fileID: 1047618564672080399, guid: 78a824f0c0c345743899c0f930d2e4f3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c8c34f3553fbf44b9498742406c13da, type: 2}
+    - target: {fileID: 6777262368057330007, guid: 78a824f0c0c345743899c0f930d2e4f3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c8c34f3553fbf44b9498742406c13da, type: 2}
+    - target: {fileID: 8863244407116075227, guid: 78a824f0c0c345743899c0f930d2e4f3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c8c34f3553fbf44b9498742406c13da, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
